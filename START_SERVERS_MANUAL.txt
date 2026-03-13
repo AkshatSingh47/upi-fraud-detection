@@ -1,0 +1,76 @@
+================================================================================
+MANUAL SERVER STARTUP GUIDE
+================================================================================
+
+STEP 1: START BACKEND SERVER
+-----------------------------
+1. Open a NEW PowerShell window
+2. Copy and paste these commands ONE BY ONE:
+
+   cd "D:\UPI fraud detection sms version\backend"
+   .\venv\Scripts\activate
+   python run.py
+
+3. Wait for this message:
+   "INFO:     Uvicorn running on http://0.0.0.0:8000"
+
+4. Keep this window OPEN
+
+
+STEP 2: START FRONTEND SERVER
+------------------------------
+1. Open ANOTHER NEW PowerShell window  
+2. Copy and paste these commands:
+
+   cd "D:\UPI fraud detection sms version\frontend"
+   npm run dev
+
+3. Look for output like:
+   "VITE v5.0.8  ready in XXX ms"
+   "➜  Local:   http://localhost:5173/"
+   OR
+   "➜  Local:   http://localhost:3001/"
+
+4. Keep this window OPEN
+
+
+STEP 3: OPEN IN BROWSER
+------------------------
+Use the URL shown by the frontend (from Step 2)
+Usually one of these:
+• http://localhost:5173
+• http://localhost:3001
+• http://localhost:3000
+
+
+TROUBLESHOOTING:
+---------------
+If Backend fails:
+• Make sure you're in the backend folder
+• Make sure venv is activated (you'll see "(venv)" in prompt)
+• Try: pip install -r requirements.txt
+
+If Frontend fails:
+• Make sure you're in the frontend folder  
+• Try: npm install
+• Then try: npm run dev again
+
+If Port is already in use:
+• Backend: Kill process on port 8000
+• Frontend: Vite will auto-select next available port
+
+
+LOGIN:
+------
+Email: singh.hannuvns@gmail.com
+Password: [your password]
+
+OR click "Sign Up" to create new account
+
+================================================================================
+
+
+
+
+
+
