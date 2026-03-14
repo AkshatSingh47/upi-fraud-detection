@@ -21,12 +21,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 
 def hash_password(password: str) -> str:
     """Hash a password"""
-    # Ensure password is not too long for bcrypt (72 bytes max)
-    password_bytes = password.encode('utf-8')
-    if len(password_bytes) > 72:
-        # Truncate to 72 bytes
-        password = password_bytes[:72].decode('utf-8', errors='ignore')
-    
+    # Ensure password is not too long for bcrypt
+    password = password[:72]
     try:
         return pwd_context.hash(password)
     except Exception as e:
@@ -35,11 +31,8 @@ def hash_password(password: str) -> str:
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a password against hash"""
-    # Ensure password is not too long for bcrypt (72 bytes max)
-    password_bytes = plain_password.encode('utf-8')
-    if len(password_bytes) > 72:
-        plain_password = password_bytes[:72].decode('utf-8', errors='ignore')
-    
+    # Ensure password is not too long for bcrypt
+    plain_password = plain_password[:72]
     try:
         return pwd_context.verify(plain_password, hashed_password)
     except Exception:
