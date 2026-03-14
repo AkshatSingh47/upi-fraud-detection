@@ -33,7 +33,7 @@ const Login = () => {
         ? { email: formData.email, password: formData.password }
         : formData
 
-      const response = await axios.post(`http://localhost:8000${endpoint}`, payload)
+      const response = await axios.post(`https://upi-fraud-detection-a5iz.onrender.com${endpoint}`, payload)
       
       // Store token and user
       localStorage.setItem('token', response.data.access_token)
